@@ -39,13 +39,33 @@ class AreaCoverageSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+class BasicCoverageSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = BasicCoverage
+        fields = ('id','description',)
+
+    def create(self, validated_data):
+        """
+        Create and return a new `BasicCoverage` instance, given the validated data.
+        """
+        return BasicCoverage.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        """
+        Update andd return an existing `BasicCoverage` instance, given the validated data.
+        """
+        instance.description = validated_data.get('description', instance.description)
+        instance.save()
+        return instance
+
 class GroupSerializer(serializers.ModelSerializer):
     group_eligibility = EligibilitySerializer()
     group_area_coverage = AreaCoverageSerializer()
+    group_basic_coverage = BasicCoverageSerializer()
 
     class Meta():
         model = Group
-        fields = ('id','name','group_eligibility','group_area_coverage',)
+        fields = ('id','name','group_eligibility','group_area_coverage','group_basic_coverage')
 
     def create(self, validated_data):
         """
@@ -60,6 +80,7 @@ class GroupSerializer(serializers.ModelSerializer):
         instance.name = validated_data.get('name', instance.name)
         instance.group_eligibility = validated_data.get('group_eligibility', instance.group_eligibility)
         instance.group_area_coverage = validated_data.get('group_area_coverage', instance.group_area_coverage)
+        instance.group_basic_coverage = validated_data.get('group_basic_coverage', instance.group_basic_coverage)
         instance.save()
         return instance
 
