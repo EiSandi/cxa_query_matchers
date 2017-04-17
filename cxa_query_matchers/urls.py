@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^', include('cxa_query.urls'))
     url(r'^group/$', views.GroupList.as_view()),
- 	url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view())
+ 	url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    url(r'^eligibility/$', views.EligibilityList.as_view())
 
 ]

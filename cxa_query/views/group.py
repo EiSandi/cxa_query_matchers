@@ -1,8 +1,8 @@
-from cxa_query.models import Group
-from cxa_query.serializers import GroupSerializer
-
 from rest_framework import mixins
 from rest_framework import generics
+
+from cxa_query.models import Group
+from cxa_query.serializers import GroupSerializer
 
 # class GroupList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
 # 	queryset = Group.objects.all()
