@@ -13,9 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from cxa_query import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # url(r'^', include('cxa_query.urls'))
+    url(r'^group/$', views.GroupList.as_view()),
+ 	url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view())
+
 ]
