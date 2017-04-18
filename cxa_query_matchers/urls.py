@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
     url(r'^eligibility/$', views.EligibilityList.as_view()),
     url(r'^area/$', views.AreaCoverageList.as_view()),
-    url(r'^basic-coverage/$', views.BasicCoverageList.as_view())
+    url(r'^basic-coverage/$', views.BasicCoverageList.as_view()),
+    url(r'^basic-coverage/(?P<pk>[0-9]+)/$', views.BasicCoverageDetail.as_view())
 
 ]

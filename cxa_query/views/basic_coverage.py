@@ -7,3 +7,7 @@ from cxa_query.serializers import BasicCoverageSerializer
 class BasicCoverageList(generics.ListCreateAPIView):
 	queryset = BasicCoverage.objects.all()
 	serializer_class = BasicCoverageSerializer
+
+class BasicCoverageDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = BasicCoverage.objects.all()
+	serializer_class = BasicCoverageSerializer
