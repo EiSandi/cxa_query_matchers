@@ -76,9 +76,25 @@ WSGI_APPLICATION = 'cxa_query_matchers.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+    # 'default':{ #local
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'cxa_data',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'admin',
+    #     'HOST': '',
+    #     'PORT': '',
+    # }
+    'default':{ #heroku
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2a0uep5b096rl',
+        'USER': 'oblydtfcndqudd',
+        'PASSWORD': 'bc7cd8ec454338fca3fbba1e0f125071c7621240ff34c47ae0a1c3c8b2c9f391',
+        'HOST': 'ec2-107-20-195-181.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 

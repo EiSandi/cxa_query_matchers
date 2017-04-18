@@ -1,5 +1,4 @@
 """cxa_query_matchers URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
@@ -16,12 +15,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from cxa_query import views
+from rest_framework import routers
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^', include('cxa_query.urls'))
     url(r'^group/$', views.GroupList.as_view()),
- 	url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
     url(r'^eligibility/$', views.EligibilityList.as_view()),
     url(r'^area/$', views.AreaCoverageList.as_view()),
     url(r'^basic-coverage/$', views.BasicCoverageList.as_view())
