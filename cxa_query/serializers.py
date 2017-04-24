@@ -59,9 +59,9 @@ class BasicCoverageSerializer(serializers.ModelSerializer):
         return instance
 
 class GroupSerializer(serializers.ModelSerializer):
-    # group_eligibility = EligibilitySerializer()
-    # group_area_coverage = AreaCoverageSerializer()
-    # group_basic_coverage = BasicCoverageSerializer()
+    group_eligibility = EligibilitySerializer()
+    group_area_coverage = AreaCoverageSerializer()
+    group_basic_coverage = BasicCoverageSerializer()
 
     class Meta():
         model = Group
