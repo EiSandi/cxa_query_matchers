@@ -7,6 +7,7 @@ class Group (models.Model):
 	group_eligibility = models.OneToOneField(Eligibility, default="", blank=True, null=True)
 	group_area_coverage = models.ForeignKey(AreaCoverage, default="", blank=True, null=True)
 	group_basic_coverage = models.ForeignKey(BasicCoverage, default="", blank=True, null=True)
+	category = models.CharField(max_length=100, blank=False, null=True)
 
 	class Meta:
 		ordering = ('created',)
