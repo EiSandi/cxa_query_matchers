@@ -65,7 +65,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = Group
-        fields = ('id','name','group_eligibility','group_area_coverage','group_basic_coverage')
+        fields = ('id','name','group_eligibility','group_area_coverage','group_basic_coverage','category')
 
     def create(self, validated_data):
         """
@@ -81,6 +81,7 @@ class GroupSerializer(serializers.ModelSerializer):
         instance.group_eligibility = validated_data.get('group_eligibility', instance.group_eligibility)
         instance.group_area_coverage = validated_data.get('group_area_coverage', instance.group_area_coverage)
         instance.group_basic_coverage = validated_data.get('group_basic_coverage', instance.group_basic_coverage)
+        instance.category = validated_data.get('category', instance.category)
         instance.save()
         return instance
 
