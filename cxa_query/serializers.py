@@ -23,7 +23,7 @@ class EligibilitySerializer(serializers.ModelSerializer):
 class AreaCoverageSerializer(serializers.ModelSerializer):
     class Meta():
         model = AreaCoverage
-        fields = ('area',)
+        fields = ('description',)
 
     def create(self, validated_data):
         """
@@ -35,7 +35,7 @@ class AreaCoverageSerializer(serializers.ModelSerializer):
         """
         Update and return an existing `AreaCoverage` instance, given the validated data.
         """
-        instance.area = validated_data.get('area', instance.name)
+        instance.description = validated_data.get('description', instance.name)
         instance.save()
         return instance
 
@@ -104,7 +104,7 @@ class GroupBasicCoverageSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = Group
-        fields = ('group_area_coverage',)
+        fields = ('group_basic_coverage',)
 
 
             
