@@ -2,7 +2,7 @@ from rest_framework import mixins
 from rest_framework import generics
 
 from cxa_query.models import Group
-from cxa_query.serializers import GroupSerializer
+from cxa_query.serializers import *
 
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -33,6 +33,18 @@ class MedicalGroup(generics.ListAPIView):
 class ProtectionGroup(generics.ListAPIView):
 	queryset = Group.objects.filter(category = 'Protection')
 	serializer_class = GroupSerializer
+
+class GroupEligibiliy(generics.RetrieveUpdateDestroyAPIView):
+	queryset = Group.objects.all()
+	serializer_class = GroupEligibilitySerializer
+
+class GroupAreaCoverage(generics.RetrieveUpdateDestroyAPIView):
+	queryset = Group.objects.all()
+	serializer_class = GroupAreaCoverageSerializer
+
+class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
+	queryset = Group.objects.all()
+	serializer_class = GroupBasicCoverageSerializer
 
 # @api_view(['GET', 'PUT'])
 # def medicalgroup_detail(request, pk):

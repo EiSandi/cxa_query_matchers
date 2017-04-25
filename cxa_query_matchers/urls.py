@@ -22,6 +22,9 @@ urlpatterns = [
     # url(r'^', include('cxa_query.urls'))
     url(r'^group/$', views.GroupList.as_view()),
     url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
+    url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
+    url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),
 
     url(r'^eligibility/$', views.EligibilityList.as_view()),
     url(r'^area/$', views.AreaCoverageList.as_view()),
@@ -30,6 +33,5 @@ urlpatterns = [
 
     url(r'^medical/$', views.MedicalGroup.as_view()),
     url(r'^protection/$', views.ProtectionGroup.as_view())
-    # url(r'^medical/(?P<pk>[0-9]+)/$', views.medicalgroup_detail)
 
 ]

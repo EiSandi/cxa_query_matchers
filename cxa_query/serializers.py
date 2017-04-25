@@ -85,4 +85,28 @@ class GroupSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+class GroupEligibilitySerializer(serializers.ModelSerializer):
+    group_eligibility = EligibilitySerializer()
+
+    class Meta():
+        model = Group
+        fields = ('group_eligibility',)
+
+class GroupAreaCoverageSerializer(serializers.ModelSerializer):
+    group_area_coverage = AreaCoverageSerializer()
+
+    class Meta():
+        model = Group
+        fields = ('group_area_coverage',)
+
+class GroupBasicCoverageSerializer(serializers.ModelSerializer):
+    group_basic_coverage = BasicCoverageSerializer()
+
+    class Meta():
+        model = Group
+        fields = ('group_basic_coverage',)
+
+
+            
+
 
