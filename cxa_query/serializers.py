@@ -4,7 +4,7 @@ from cxa_query.models import *
 class EligibilitySerializer(serializers.ModelSerializer):
     class Meta():
         model = Eligibility
-        fields = ('id','description',)
+        fields = ('description',)
         
     def create(self, validated_data):
         """
@@ -23,7 +23,7 @@ class EligibilitySerializer(serializers.ModelSerializer):
 class AreaCoverageSerializer(serializers.ModelSerializer):
     class Meta():
         model = AreaCoverage
-        fields = ('id','area')
+        fields = ('area',)
 
     def create(self, validated_data):
         """
@@ -42,7 +42,7 @@ class AreaCoverageSerializer(serializers.ModelSerializer):
 class BasicCoverageSerializer(serializers.ModelSerializer):
     class Meta():
         model = BasicCoverage
-        fields = ('id','description',)
+        fields = ('description',)
 
     def create(self, validated_data):
         """
@@ -104,7 +104,7 @@ class GroupBasicCoverageSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = Group
-        fields = ('group_basic_coverage',)
+        fields = ('group_area_coverage',)
 
 
             
