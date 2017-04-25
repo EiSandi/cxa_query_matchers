@@ -48,12 +48,7 @@ class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
 
 @api_view(['GET'])
 def medicalgroup_detail(request):
-	try:
-		group = Group.objects.get(pk=1)
-	except Group.DoesNotExist:
-		return Response(status=status.HTTP_404_NOT_FOUND)
-
 	if request.method == 'GET':
-		serializer = GroupSerializer(group)
-		print (serializer.data)
-		return Response(serializer.data)
+		token = request.META['HTTP_AUTHORIZATION']
+		print token
+		return Response({'token':'cxa_data_metlife'})

@@ -32,8 +32,8 @@ urlpatterns = [
     url(r'^basic-coverage/(?P<pk>[0-9]+)/$', views.BasicCoverageDetail.as_view()),
 
     url(r'^medical/$', views.MedicalGroup.as_view()),
-    url(r'^protection/$', views.ProtectionGroup.as_view())
+    url(r'^protection/$', views.ProtectionGroup.as_view()),
 
-    # url(r'test/$', views.medicalgroup_detail)
+    url(r'test/$', views.medicalgroup_detail)
 
 ]
