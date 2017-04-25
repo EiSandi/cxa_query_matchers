@@ -16,7 +16,7 @@ class EligibilitySerializer(serializers.ModelSerializer):
         """
         Update and return an existing `Eligibility` instance, given the validated data.
         """
-        instance.name = validated_data.get('name', instance.name)
+        instance.description = validated_data.get('description', instance.description)
         instance.save()
         return instance
 
@@ -35,7 +35,7 @@ class AreaCoverageSerializer(serializers.ModelSerializer):
         """
         Update and return an existing `AreaCoverage` instance, given the validated data.
         """
-        instance.description = validated_data.get('description', instance.name)
+        instance.description = validated_data.get('description', instance.description)
         instance.save()
         return instance
 

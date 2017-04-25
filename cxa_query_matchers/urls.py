@@ -34,4 +34,6 @@ urlpatterns = [
     url(r'^medical/$', views.MedicalGroup.as_view()),
     url(r'^protection/$', views.ProtectionGroup.as_view())
 
+    # url(r'test/$', views.medicalgroup_detail)
+
 ]

@@ -46,20 +46,14 @@ class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Group.objects.all()
 	serializer_class = GroupBasicCoverageSerializer
 
-# @api_view(['GET', 'PUT'])
-# def medicalgroup_detail(request, pk):
-# 	try:
-# 		group = Group.objects.get(pk=pk)
-# 	except Group.DoesNotExist:
-# 		return Response(status=status.HTTP_404_NOT_FOUND)
+@api_view(['GET'])
+def medicalgroup_detail(request):
+	try:
+		group = Group.objects.get(pk=1)
+	except Group.DoesNotExist:
+		return Response(status=status.HTTP_404_NOT_FOUND)
 
-# 	if request.method == 'GET':
-# 		serializer = GroupSerializer(group)
-# 		return Response(serializer.data)
-
-# 	elif request.method == 'PUT':
-# 		serializer = GroupSerializer(group, data=request.data)
-# 		if serializer.is_valid():
-# 			serializer.save()
-# 			return Response(serializer.data)
-# 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+	if request.method == 'GET':
+		serializer = GroupSerializer(group)
+		print (serializer.data)
+		return Response(serializer.data)
