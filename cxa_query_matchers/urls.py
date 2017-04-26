@@ -19,21 +19,30 @@ from rest_framework import routers
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^', include('cxa_query.urls'))
-    url(r'^group/$', views.GroupList.as_view()),
-    url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
-    url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
-    url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
-    url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),
+
+    #WITHOUT TOKEN
+    # url(r'^group/$', views.GroupList.as_view()),
+    # url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    # url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
+    # url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
+    # url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),
 
     url(r'^eligibility/$', views.EligibilityList.as_view()),
     url(r'^area/$', views.AreaCoverageList.as_view()),
     url(r'^basic-coverage/$', views.BasicCoverageList.as_view()),
     url(r'^basic-coverage/(?P<pk>[0-9]+)/$', views.BasicCoverageDetail.as_view()),
 
-    url(r'^medical/$', views.MedicalGroup.as_view()),
-    url(r'^protection/$', views.ProtectionGroup.as_view()),
+    # url(r'^medical/$', views.MedicalGroup.as_view()),
+    # url(r'^protection/$', views.ProtectionGroup.as_view()),
 
-    url(r'test/$', views.medicalgroup_detail)
+    #WITH TOKEN
+    url(r'token/$', views.generate_token),
+    url(r'^group/$', views.group_list),
+    url(r'^group/(?P<pk>[0-9]+)/$', views.group_detail),
+    url(r'^medical/$', views.medical_group),
+    url(r'^protection/$', views.protection_group),
+    url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.group_eligibility),
+    url(r'^group/(?P<pk>[0-9]+)/area/$', views.group_areacoverage),
+    url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage)
 
 ]

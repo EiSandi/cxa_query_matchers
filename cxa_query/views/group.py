@@ -8,15 +8,6 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-# class GroupList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
-# 	queryset = Group.objects.all()
-# 	serializer_class = GroupSerializer
-
-	# def get(self, request, *args, **kwargs):
-	# 	return self.list(request, *args, **kwargs)
-
-	# def post(self, request, *args, **kwargs):
-	# 	return self.create(request, *args, **kwargs)
 
 class GroupList(generics.ListCreateAPIView):
 	queryset = Group.objects.all()
@@ -47,8 +38,75 @@ class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
 	serializer_class = GroupBasicCoverageSerializer
 
 @api_view(['GET'])
-def medicalgroup_detail(request):
+def generate_token(request):
 	if request.method == 'GET':
-		token = request.META['HTTP_AUTHORIZATION']
-		print token
-		return Response({'token':'cxa_data_metlife'})
+		#cxa_data_metlife
+		return Response({'token':'756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121'})
+
+@api_view(['GET'])
+def group_list(request):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.all()
+			serializer = GroupSerializer(group, many=True)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def group_detail(request, pk, format=None):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		try:
+			group = Group.objects.get(pk=pk)
+		except Group.DoesNotExist:
+			return Response(status = status.HTTP_404_NOT_FOUND)
+
+		if request.method == 'GET':
+			serializer = GroupSerializer(group)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def medical_group(request):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.filter(category = 'Medical')
+			serializer = GroupSerializer(group, many=True)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def protection_group(request):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.filter(category = 'Protection')
+			serializer = GroupSerializer(group, many = True)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def group_eligibility(request, pk, format=None):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.get(pk=pk)
+			serializer = GroupEligibilitySerializer(group)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def group_areacoverage(request, pk, format=None):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.get(pk=pk)
+			serializer = GroupAreaCoverageSerializer(group)
+			return Response(serializer.data)
+
+@api_view(['GET'])
+def group_basiccoverage(request, pk, format=None):
+	token = request.META['HTTP_AUTHORIZATION']
+	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+		if request.method == 'GET':
+			group = Group.objects.get(pk=pk)
+			serializer = GroupBasicCoverageSerializer(group)
+			return Response(serializer.data)
+
