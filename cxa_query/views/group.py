@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+import os
 
 class GroupList(generics.ListCreateAPIView):
 	queryset = Group.objects.all()
@@ -41,7 +42,7 @@ class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
 def generate_token(request):
 	if request.method == 'GET':
 		#cxa_data_metlife
-		return Response({'token':'756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121'})
+		return Response({'token':os.environ.get('TOKEN')})
 
 @api_view(['GET'])
 def group_list(request):
