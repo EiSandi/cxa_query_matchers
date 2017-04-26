@@ -51,6 +51,8 @@ def group_list(request):
 			group = Group.objects.all()
 			serializer = GroupSerializer(group, many=True)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def group_detail(request, pk, format=None):
@@ -64,6 +66,8 @@ def group_detail(request, pk, format=None):
 		if request.method == 'GET':
 			serializer = GroupSerializer(group)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def medical_group(request):
@@ -73,6 +77,8 @@ def medical_group(request):
 			group = Group.objects.filter(category = 'Medical')
 			serializer = GroupSerializer(group, many=True)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def protection_group(request):
@@ -82,6 +88,8 @@ def protection_group(request):
 			group = Group.objects.filter(category = 'Protection')
 			serializer = GroupSerializer(group, many = True)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def group_eligibility(request, pk, format=None):
@@ -91,6 +99,8 @@ def group_eligibility(request, pk, format=None):
 			group = Group.objects.get(pk=pk)
 			serializer = GroupEligibilitySerializer(group)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def group_areacoverage(request, pk, format=None):
@@ -100,6 +110,8 @@ def group_areacoverage(request, pk, format=None):
 			group = Group.objects.get(pk=pk)
 			serializer = GroupAreaCoverageSerializer(group)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
 @api_view(['GET'])
 def group_basiccoverage(request, pk, format=None):
@@ -109,4 +121,6 @@ def group_basiccoverage(request, pk, format=None):
 			group = Group.objects.get(pk=pk)
 			serializer = GroupBasicCoverageSerializer(group)
 			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
 
