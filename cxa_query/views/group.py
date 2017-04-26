@@ -47,7 +47,7 @@ def generate_token(request):
 @api_view(['GET'])
 def group_list(request):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.all()
 			serializer = GroupSerializer(group, many=True)
@@ -58,7 +58,7 @@ def group_list(request):
 @api_view(['GET'])
 def group_detail(request, pk, format=None):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		try:
 			group = Group.objects.get(pk=pk)
 		except Group.DoesNotExist:
@@ -73,7 +73,7 @@ def group_detail(request, pk, format=None):
 @api_view(['GET'])
 def medical_group(request):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.filter(category = 'Medical')
 			serializer = GroupSerializer(group, many=True)
@@ -84,7 +84,7 @@ def medical_group(request):
 @api_view(['GET'])
 def protection_group(request):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.filter(category = 'Protection')
 			serializer = GroupSerializer(group, many = True)
@@ -95,7 +95,7 @@ def protection_group(request):
 @api_view(['GET'])
 def group_eligibility(request, pk, format=None):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
 			serializer = GroupEligibilitySerializer(group)
@@ -106,7 +106,7 @@ def group_eligibility(request, pk, format=None):
 @api_view(['GET'])
 def group_areacoverage(request, pk, format=None):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
 			serializer = GroupAreaCoverageSerializer(group)
@@ -117,7 +117,7 @@ def group_areacoverage(request, pk, format=None):
 @api_view(['GET'])
 def group_basiccoverage(request, pk, format=None):
 	token = request.META['HTTP_AUTHORIZATION']
-	if token == '756395f053e947e8332e6f6b838a409d5e48e226833c05d87ce711de0d441121':
+	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
 			serializer = GroupBasicCoverageSerializer(group)
