@@ -43,6 +43,10 @@ urlpatterns = [
     url(r'^protection/$', views.protection_group),
     url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.group_eligibility),
     url(r'^group/(?P<pk>[0-9]+)/area/$', views.group_areacoverage),
-    url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage)
+    url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage),
+
+    # url(r'^search/(?P<name>[\w\-]+)/$', views.search),
+    url(r'^searchpost/$', views.searchpost),
+    url(r'^search/$', views.search)
 
 ]
