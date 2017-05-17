@@ -46,7 +46,12 @@ def generate_token(request):
 
 @api_view(['GET'])
 def group_list(request):
-	token = request.META['HTTP_AUTHORIZATION']
+
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.all()
@@ -57,7 +62,11 @@ def group_list(request):
 
 @api_view(['GET'])
 def group_detail(request, pk, format=None):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+
 	if token == os.environ.get('TOKEN'):
 		try:
 			group = Group.objects.get(pk=pk)
@@ -72,7 +81,11 @@ def group_detail(request, pk, format=None):
 
 @api_view(['GET'])
 def medical_group(request):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.filter(category = 'Medical')
@@ -83,7 +96,11 @@ def medical_group(request):
 
 @api_view(['GET'])
 def protection_group(request):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.filter(category = 'Protection')
@@ -94,7 +111,11 @@ def protection_group(request):
 
 @api_view(['GET'])
 def group_eligibility(request, pk, format=None):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
@@ -105,7 +126,11 @@ def group_eligibility(request, pk, format=None):
 
 @api_view(['GET'])
 def group_areacoverage(request, pk, format=None):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
@@ -116,7 +141,11 @@ def group_areacoverage(request, pk, format=None):
 
 @api_view(['GET'])
 def group_basiccoverage(request, pk, format=None):
-	token = request.META['HTTP_AUTHORIZATION']
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
 			group = Group.objects.get(pk=pk)
