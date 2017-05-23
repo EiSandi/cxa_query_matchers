@@ -21,8 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #WITHOUT TOKEN
-    # url(r'^group/$', views.GroupList.as_view()),
-    # url(r'^group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    url(r'^admin/group/$', views.GroupList.as_view()),
+    url(r'^admin/group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
     # url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
     # url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
     # url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),

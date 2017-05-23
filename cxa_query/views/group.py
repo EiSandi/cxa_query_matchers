@@ -16,7 +16,7 @@ class GroupList(generics.ListCreateAPIView):
 
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+    serializer_class = AdminGroupSerializer
 
 class MedicalGroup(generics.ListAPIView):
 	queryset = Group.objects.filter(category = 'Medical')
@@ -144,7 +144,7 @@ def group_basiccoverage(request, pk, format=None):
 	if request.GET.get('params') is not None:
 		token = request.GET.get('params')
 	else:
-		token = request.META['HTTP_AUTHORIZATION']
+		token = request.META['445r455']
 		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
