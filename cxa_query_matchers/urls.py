@@ -48,10 +48,10 @@ urlpatterns = [
     url(r'^group/(?P<pk>[0-9]+)/area/$', views.group_areacoverage),
     url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage),
 
-    url(r'^benefits/$', views.benefits_list),
-    url(r'^benefits/(?P<pk>[0-9]+)/$', views.benefits_detail),
-    url(r'^benefits/(?P<pk>[0-9]+)/basic/$', views.benefits_basiccoverage),
-    url(r'^benefits/(?P<pk>[0-9]+)/area/$', views.benefits_areacoverage),
+    url(r'^benefit/$', views.benefits_list),
+    url(r'^benefit/(?P<pk>[0-9]+)/$', views.benefits_detail),
+    url(r'^benefit/(?P<pk>[0-9]+)/basic/$', views.benefits_basiccoverage),
+    url(r'^benefit/(?P<pk>[0-9]+)/area/$', views.benefits_areacoverage),
     
 
     # url(r'^search/(?P<name>[\w\-]+)/$', views.search),
