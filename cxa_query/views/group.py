@@ -16,27 +16,27 @@ class GroupList(generics.ListCreateAPIView):
 
 class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Group.objects.all()
-    serializer_class = AdminGroupSerializer
+    serializer_class = GroupSerializer
 
-class MedicalGroup(generics.ListAPIView):
-	queryset = Group.objects.filter(category = 'Medical')
-	serializer_class = GroupSerializer
+# class MedicalGroup(generics.ListAPIView):
+# 	queryset = Group.objects.filter(category = 'Medical')
+# 	serializer_class = GroupSerializer
 
-class ProtectionGroup(generics.ListAPIView):
-	queryset = Group.objects.filter(category = 'Protection')
-	serializer_class = GroupSerializer
+# class ProtectionGroup(generics.ListAPIView):
+# 	queryset = Group.objects.filter(category = 'Protection')
+# 	serializer_class = GroupSerializer
 
-class GroupEligibiliy(generics.RetrieveUpdateDestroyAPIView):
-	queryset = Group.objects.all()
-	serializer_class = GroupEligibilitySerializer
+# class GroupEligibiliy(generics.RetrieveUpdateDestroyAPIView):
+# 	queryset = Group.objects.all()
+# 	serializer_class = GroupEligibilitySerializer
 
-class GroupAreaCoverage(generics.RetrieveUpdateDestroyAPIView):
-	queryset = Group.objects.all()
-	serializer_class = GroupAreaCoverageSerializer
+# class GroupAreaCoverage(generics.RetrieveUpdateDestroyAPIView):
+# 	queryset = Group.objects.all()
+# 	serializer_class = GroupAreaCoverageSerializer
 
-class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
-	queryset = Group.objects.all()
-	serializer_class = GroupBasicCoverageSerializer
+# class GroupBasicCoverage(generics.RetrieveUpdateDestroyAPIView):
+# 	queryset = Group.objects.all()
+# 	serializer_class = GroupBasicCoverageSerializer
 
 @api_view(['GET'])
 def generate_token(request):

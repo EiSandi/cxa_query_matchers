@@ -23,19 +23,22 @@ urlpatterns = [
     #WITHOUT TOKEN
     url(r'^admin/group/$', views.GroupList.as_view()),
     url(r'^admin/group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
-    # url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
-    # url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
-    # url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),
+    url(r'^admin/benefits/$', views.BenefitsList.as_view()),
+    url(r'^admin/benefits/(?P<pk>[0-9]+)/$', views.BenefitsDetail.as_view()),
 
-    url(r'^eligibility/$', views.EligibilityList.as_view()),
-    url(r'^area/$', views.AreaCoverageList.as_view()),
-    url(r'^basic-coverage/$', views.BasicCoverageList.as_view()),
-    url(r'^basic-coverage/(?P<pk>[0-9]+)/$', views.BasicCoverageDetail.as_view()),
+    # # url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
+    # # url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),
+    # # url(r'^group/(?P<pk>[0-9]+)/basic/$', views.GroupBasicCoverage.as_view()),
 
-    # url(r'^medical/$', views.MedicalGroup.as_view()),
-    # url(r'^protection/$', views.ProtectionGroup.as_view()),
+    # url(r'^eligibility/$', views.EligibilityList.as_view()),
+    # url(r'^area/$', views.AreaCoverageList.as_view()),
+    # url(r'^basic-coverage/$', views.BasicCoverageList.as_view()),
+    # url(r'^basic-coverage/(?P<pk>[0-9]+)/$', views.BasicCoverageDetail.as_view()),
 
-    #WITH TOKEN
+    # # url(r'^medical/$', views.MedicalGroup.as_view()),
+    # # url(r'^protection/$', views.ProtectionGroup.as_view()),
+
+    # #WITH TOKEN
     url(r'token/$', views.generate_token),
     url(r'^group/$', views.group_list),
     url(r'^group/(?P<pk>[0-9]+)/$', views.group_detail),
@@ -44,6 +47,12 @@ urlpatterns = [
     url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.group_eligibility),
     url(r'^group/(?P<pk>[0-9]+)/area/$', views.group_areacoverage),
     url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage),
+
+    url(r'^benefits/$', views.benefits_list),
+    url(r'^benefits/(?P<pk>[0-9]+)/$', views.benefits_detail),
+    url(r'^benefits/(?P<pk>[0-9]+)/basic/$', views.benefits_basiccoverage),
+    url(r'^benefits/(?P<pk>[0-9]+)/area/$', views.benefits_areacoverage),
+    
 
     # url(r'^search/(?P<name>[\w\-]+)/$', views.search),
     url(r'^searchpost/$', views.searchpost),
