@@ -144,7 +144,7 @@ def group_basiccoverage(request, pk, format=None):
 	if request.GET.get('params') is not None:
 		token = request.GET.get('params')
 	else:
-		token = request.META['445r455']
+		token = request.META['HTTP_AUTHORIZATION']
 		
 	if token == os.environ.get('TOKEN'):
 		if request.method == 'GET':
