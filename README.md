@@ -3,7 +3,7 @@ Backend for cxa teamtempo office bot project
 
 ## Local Configuration Guide
 
-**Ingredients:** python3, virtualenv, postgres
+**Ingredients:** python3, django, django rest framework, virtualenv, postgres
 
     $ cd cxa-query-matchers
     $ virtualenv env
