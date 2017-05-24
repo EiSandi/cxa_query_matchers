@@ -17,7 +17,12 @@ from django.contrib import admin
 from cxa_query import views
 from rest_framework import routers
 
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='CXA QUERY MATCHER API')
+
 urlpatterns = [
+    url(r'^$', schema_view),
     url(r'^admin/', admin.site.urls),
 
     #WITHOUT TOKEN
