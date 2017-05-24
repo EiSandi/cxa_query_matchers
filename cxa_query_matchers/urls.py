@@ -21,10 +21,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #WITHOUT TOKEN
-    url(r'^api/admin/group/$', views.GroupList.as_view()),
-    url(r'^api/admin/group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
-    url(r'^api/admin/benefits/$', views.BenefitsList.as_view()),
-    url(r'^api/admin/benefits/(?P<pk>[0-9]+)/$', views.BenefitsDetail.as_view()),
+    # url(r'^api/admin/group/$', views.GroupList.as_view()),
+    # url(r'^api/admin/group/(?P<pk>[0-9]+)/$', views.GroupDetail.as_view()),
+    # url(r'^api/admin/benefits/$', views.BenefitsList.as_view()),
+    # url(r'^api/admin/benefits/(?P<pk>[0-9]+)/$', views.BenefitsDetail.as_view()),
 
     # # url(r'^group/(?P<pk>[0-9]+)/eligibility/$', views.GroupEligibiliy.as_view()),
     # # url(r'^group/(?P<pk>[0-9]+)/area/$', views.GroupAreaCoverage.as_view()),

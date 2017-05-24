@@ -10,13 +10,13 @@ from rest_framework.response import Response
 
 import os
 
-class BenefitsList(generics.ListCreateAPIView):
-	queryset = Benefits.objects.all()
-	serializer_class = BenefitsSerializer
+# class BenefitsList(generics.ListCreateAPIView):
+# 	queryset = Benefits.objects.all()
+# 	serializer_class = BenefitsSerializer
 
-class BenefitsDetail(generics.RetrieveUpdateDestroyAPIView):
-	queryset = Benefits.objects.all()
-	serializer_class = BenefitsSerializer
+# class BenefitsDetail(generics.RetrieveUpdateDestroyAPIView):
+# 	queryset = Benefits.objects.all()
+# 	serializer_class = BenefitsSerializer
 
 @api_view(['GET'])
 def benefits_list(request):

@@ -91,22 +91,22 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
-    # 'default':{ #local
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'cxa_data',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'admin',
-    #     'HOST': '',
-    #     'PORT': '',
-    # }
-    'default':{ #heroku
+    'default':{ #local
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dfumibfasj8rq1',
-        'USER': 'xkqhhrtgejpitd',
-        'PASSWORD': '345998209b87a3b86bd6a572e229fbdc6bd79ce1e547a47fc2400d9c5923b811',
-        'HOST': 'ec2-54-83-49-44.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'cxa_data',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'PORT': '',
     }
+    # 'default':{ #heroku
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'dfumibfasj8rq1',
+    #     'USER': 'xkqhhrtgejpitd',
+    #     'PASSWORD': '345998209b87a3b86bd6a572e229fbdc6bd79ce1e547a47fc2400d9c5923b811',
+    #     'HOST': 'ec2-54-83-49-44.compute-1.amazonaws.com',
+    #     'PORT': '5432',
+    # }
 }
 
 

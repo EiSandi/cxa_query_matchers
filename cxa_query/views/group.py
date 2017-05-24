@@ -10,13 +10,13 @@ from rest_framework.response import Response
 
 import os
 
-class GroupList(generics.ListCreateAPIView):
-	queryset = Group.objects.all()
-	serializer_class = GroupSerializer
+# class GroupList(generics.ListCreateAPIView):
+# 	queryset = Group.objects.all()
+# 	serializer_class = GroupSerializer
 
-class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+# class GroupDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Group.objects.all()
+#     serializer_class = GroupSerializer
 
 # class MedicalGroup(generics.ListAPIView):
 # 	queryset = Group.objects.filter(category = 'Medical')
