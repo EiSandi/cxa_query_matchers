@@ -129,8 +129,29 @@ class BenefitsAreaCoverageSerializer(serializers.ModelSerializer):
         model = Benefits
         fields = ('area_coverage',)
 
+class AdmissionSerializer(serializers.ModelSerializer):
 
+    class Meta():
+        model = Admission
+        fields = ('description','before_admission','upon_discharge','after_discharge')
 
-            
+class BeforeAdmissionSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Admission
+        fields = ('before_admission',)
+
+class AdmissionUponDischargeSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Admission
+        fields = ('upon_discharge',)
+
+class AdmissionAfterDischargeSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Admission
+        fields = ('after_discharge',)
+ 
 
 
