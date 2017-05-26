@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Group)
 admin.site.register(Benefits)
 admin.site.register(Admission)
+admin.site.register(Hospital)

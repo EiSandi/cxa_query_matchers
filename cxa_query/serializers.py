@@ -152,6 +152,18 @@ class AdmissionAfterDischargeSerializer(serializers.ModelSerializer):
     class Meta():
         model = Admission
         fields = ('after_discharge',)
+
+class HospitalSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Hospital
+        fields = ('name','details',)
+
+class HospitalDetailsSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Hospital
+        fields = ('details',)
  
 
 

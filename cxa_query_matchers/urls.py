@@ -58,11 +58,14 @@ urlpatterns = [
     url(r'^benefit/(?P<pk>[0-9]+)/basic/$', views.benefits_basiccoverage),
     url(r'^benefit/(?P<pk>[0-9]+)/area/$', views.benefits_areacoverage),
 
-    url(r'^admissions/$', views.admission_list),
-    url(r'^admissions/(?P<pk>[0-9]+)/$', views.admission_detail),
-    url(r'^admissions/(?P<pk>[0-9]+)/before/$', views.admission_beforeadmission),
-    url(r'^admissions/(?P<pk>[0-9]+)/upon/$', views.admission_upondischarge),
-    url(r'^admissions/(?P<pk>[0-9]+)/after/$', views.admission_afterdischarge),
+    url(r'^admission/$', views.admission_list),
+    url(r'^admission/(?P<pk>[0-9]+)/$', views.admission_detail),
+    url(r'^admission/(?P<pk>[0-9]+)/before/$', views.admission_beforeadmission),
+    url(r'^admission/(?P<pk>[0-9]+)/upon/$', views.admission_upondischarge),
+    url(r'^admission/(?P<pk>[0-9]+)/after/$', views.admission_afterdischarge),
+
+    url(r'^hospital/$', views.hospital_list),
+    url(r'^hospital/(?P<pk>[0-9]+)/$', views.hospital_detail),
 
     # url(r'^search/(?P<name>[\w\-]+)/$', views.search),
     url(r'^searchpost/$', views.searchpost),
