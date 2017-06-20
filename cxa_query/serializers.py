@@ -63,7 +63,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = Group
-        fields = ('id','name','eligibility','area_coverage','basic_coverage','category')
+        fields = ('id','name','eligibility','area_coverage','basic_coverage','category','list_desc','claim_procedure',)
 
     def create(self, validated_data):
         """
@@ -80,6 +80,8 @@ class GroupSerializer(serializers.ModelSerializer):
         instance.area_coverage = validated_data.get('area_coverage', instance.area_coverage)
         instance.basic_coverage = validated_data.get('basic_coverage', instance.basic_coverage)
         instance.category = validated_data.get('category', instance.category)
+        instance.list_desc = validated_data.get('list_desc', instance.list_desc)
+        instance.claim_procedure = validated_data.get('claim_procedure', instance.claim_procedure)
         instance.save()
         return instance
 
@@ -100,6 +102,13 @@ class GroupBasicCoverageSerializer(serializers.ModelSerializer):
     class Meta():
         model = Group
         fields = ('basic_coverage',)
+
+class GroupListDesc(serializers.ModelSerializer):
+
+    class Meta():
+        model = Group
+        fields = ('list_desc',)
+            
 
 class BenefitsSerializer(serializers.ModelSerializer):
 
