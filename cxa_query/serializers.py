@@ -103,11 +103,17 @@ class GroupBasicCoverageSerializer(serializers.ModelSerializer):
         model = Group
         fields = ('basic_coverage',)
 
-class GroupListDesc(serializers.ModelSerializer):
+class GroupListDescSerializer(serializers.ModelSerializer):
 
     class Meta():
         model = Group
         fields = ('list_desc',)
+
+class GroupClaimProcedureSerializer(serializers.ModelSerializer):
+
+    class Meta():
+        model = Group
+        fields = ('claim_procedure',)
             
 
 class BenefitsSerializer(serializers.ModelSerializer):

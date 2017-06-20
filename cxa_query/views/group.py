@@ -154,3 +154,34 @@ def group_basiccoverage(request, pk, format=None):
 	else:
 		return Response({'status':'Token Authentication Failed.'})
 
+@api_view(['GET'])
+def group_listdesc(request, pk, format=None):
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+
+	if token == os.environ.get('TOKEN'):
+		if request.method == 'GET':
+			group = Group.objects.get(pk = pk)
+			serializer = GroupListDescSerializer(group)
+			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
+
+@api_view(['GET'])
+def group_claimprocedure(request, pk, format=None):
+	if request.GET.get('params') is not None:
+		token = request.GET.get('params')
+	else:
+		token = request.META['HTTP_AUTHORIZATION']
+
+	if token == os.environ.get('TOKEN'):
+		if request.method == 'GET':
+			group = Group.objects.get(pk = pk)
+			serializer = GroupClaimProcedureSerializer(group)
+			return Response(serializer.data)
+	else:
+		return Response({'status':'Token Authentication Failed.'})
+
+
