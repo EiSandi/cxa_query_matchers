@@ -7,7 +7,7 @@ class Group (models.Model):
 	category = models.CharField(max_length=1000, blank=True, null=True)
 	eligibility = models.CharField(max_length=1000, blank=True, null=True)
 	area_coverage = models.CharField(max_length=1000, blank=True, null=True)
-	basic_coverage = models.CharField(max_length=1000, blank=True, null=True)
+	basic_coverage = models.CharField(max_length=3000, blank=True, null=True)
 	list_desc = models.CharField(max_length=1000, blank=True, null=True)
 	claim_procedure = models.CharField(max_length=1000, blank=True, null=True)
 
