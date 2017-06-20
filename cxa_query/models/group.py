@@ -8,7 +8,8 @@ class Group (models.Model):
 	eligibility = models.CharField(max_length=500, blank=True, null=True)
 	area_coverage = models.CharField(max_length=500, blank=True, null=True)
 	basic_coverage = models.CharField(max_length=500, blank=True, null=True)
-
+	list_desc = models.CharField(max_length=1000, blank=True, null=True)
+	claim_procedure = models.CharField(max_length=1000, blank=True, null=True)
 
 	class Meta:
 		ordering = ('created',)
