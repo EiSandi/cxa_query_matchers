@@ -53,7 +53,7 @@ urlpatterns = [
     url(r'^group/(?P<pk>[0-9]+)/area/$', views.group_areacoverage),
     url(r'^group/(?P<pk>[0-9]+)/basic/$', views.group_basiccoverage),
     url(r'^group/(?P<pk>[0-9]+)/list/$', views.group_listdesc),
-    url(r'^group/(?P<pk>[0-9]+)/claim/$', views.group_claimprocedure)
+    url(r'^group/(?P<pk>[0-9]+)/claim/$', views.group_claimprocedure),
 
     url(r'^benefit/$', views.benefits_list),
     url(r'^benefit/(?P<pk>[0-9]+)/$', views.benefits_detail),
